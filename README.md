@@ -2,7 +2,7 @@
 
 ## Installation
 
-To add the Basis Theory iOS package using [Swift Package Manager](https://www.swift.org/package-manager/), open XCode and click on `File → Add Packages`, search for "https://github.com/Basis-Theory/3ds-ios", and click on `Copy Dependency`.
+To add the Basis Theory iOS package using [Swift Package Manager](https://www.swift.org/package-manager/), open XCode and click on `File → Add Packages`, search for "https://github.com/Basis-Theory/ios-threeds", and click on `Copy Dependency`.
 
 ## Usage
 
