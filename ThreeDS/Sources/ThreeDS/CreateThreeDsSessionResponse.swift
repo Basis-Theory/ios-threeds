@@ -12,4 +12,5 @@ public struct CreateThreeDsSessionResponse: Decodable, Encodable, Sendable {
     public let methodNotificationUrl: String
     public let directoryServerId: String
     public let recommendedVersion: String
+    public let additionalCardBrands: [String]?
 }
