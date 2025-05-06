@@ -14,7 +14,7 @@ appId: com.basistheory.ThreeDSTester
 - tapOn:
     text: "Create Session"
     retryTapIfNoChange: false
-- assertVisible: "Unable to create session, 3DS service responded 500"
+- assertVisible: "Unable to create session, 3DS service responded 424"
 - tapOn: "Clear"
 
 # Card 2
@@ -25,6 +25,6 @@ appId: com.basistheory.ThreeDSTester
 - tapOn:
       text: "Create Session"
       retryTapIfNoChange: false
-- assertVisible: "Unable to create session, 3DS service responded 500"
+- assertVisible: "Unable to create session, 3DS service responded 424"
 - tapOn: "Clear"
 - stopApp
