@@ -17,7 +17,7 @@ let package = Package(
     dependencies: [
         .package(
             url: "https://github.com/unravelin/ravelin-3ds-sdk-ios-xcframework-distribution",
-            from: "1.1.2")
+            from: "2.0.0")
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
@@ -25,8 +25,8 @@ let package = Package(
         .binaryTarget(
             name: "Ravelin3DS",
             url:
-                "https://ravelin.mycloudrepo.io/public/repositories/threeds2service-ios/release/1.1.2/Ravelin3DS.xcframework.zip",
-            checksum: "c06a38d4644567baa5a86f8d457f9c4b2809b246247b23de894856f157747863"
+                "https://ravelin.mycloudrepo.io/public/repositories/threeds2service-ios/release/2.0.0/Ravelin3DS.xcframework.zip",
+            checksum: "6e2c68757ca1c6476156c6c069cfcc04998b017343034b4d30b58e660d62fc83"
         ),
         .target(
             name: "ThreeDS",

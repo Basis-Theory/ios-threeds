@@ -17,9 +17,9 @@ EOT
 
 echo "Booting Simulator"
 
-SIMULATOR_UUID=$(xcrun simctl list devices | grep "iPhone 16 Pro" | grep -oE '[0-9A-F-]{36}' | head -n 1) || echo "none"
+SIMULATOR_UUID=$(xcrun simctl list devices | grep "iPhone 16 Pro " | grep -oE '[0-9A-F-]{36}' | head -n 1)
 
-xcrun simctl boot $SIMULATOR_UUID
+xcrun simctl bootstatus "$SIMULATOR_UUID" -b
 
 echo "Building ThreeDSTester app for ${SIMULATOR_UUID}"
 
