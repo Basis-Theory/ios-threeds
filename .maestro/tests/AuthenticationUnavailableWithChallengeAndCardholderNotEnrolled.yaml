@@ -9,7 +9,7 @@ appId: com.basistheory.ThreeDSTester
 
 # Card 1
 - tapOn: "Token ID"
-- inputText: "003f69e1-99c6-4536-8808-14a2f109b203" #  4200000000000010 Visa
+- inputText: "b7073ebb-80c6-464e-b2c1-11784b94b069" #  4200000000000010 Visa
 
 - tapOn:
     text: "Create Session"
@@ -24,6 +24,7 @@ appId: com.basistheory.ThreeDSTester
 - tapOn:
       below: "Enter your code below"
 - inputText: "1234"
+- tapOn: "Purchase authentication"
 - tapOn: "Submit"
 
 - assertVisible: "Challenge failed"
@@ -37,7 +38,7 @@ appId: com.basistheory.ThreeDSTester
 # Card 2
 
 - tapOn: "Token ID"
-- inputText: "1ee130af-2396-4de5-8ef0-6845f89a96b8" #  6011000400000000 Discover
+- inputText: "e17559b7-ab39-49cc-b6f7-eb3293ee50dd" #  6011000400000000 Discover
 
 - tapOn:
     text: "Create Session"
@@ -52,6 +53,7 @@ appId: com.basistheory.ThreeDSTester
 - tapOn:
       below: "Enter your code below"
 - inputText: "1234"
+- tapOn: "Purchase authentication"
 - tapOn: "Submit"
 
 - assertVisible: "Challenge failed"

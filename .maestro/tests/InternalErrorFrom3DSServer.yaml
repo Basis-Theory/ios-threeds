@@ -9,7 +9,7 @@ appId: com.basistheory.ThreeDSTester
 
 # Card 1
 - tapOn: "Token ID"
-- inputText: "8b739401-8371-4a82-b49e-5ab8338ddaff" #  4200000000000013 VISA
+- inputText: "736990d9-4a6d-499e-8270-4a3ba613c022" #  4200000000000013 VISA
 
 - tapOn:
     text: "Create Session"
@@ -20,7 +20,7 @@ appId: com.basistheory.ThreeDSTester
 # Card 2
 
 - tapOn: "Token ID"
-- inputText: "4a2a306c-1570-4dc2-adb6-297dea50bd32" #  5019717010103742 Dankort
+- inputText: "c560ea30-06c4-4187-8b22-56760bb39d6c" #  5019717010103742 Dankort
 
 - tapOn:
       text: "Create Session"
