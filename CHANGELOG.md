@@ -1,3 +1,11 @@
+## [1.2.0](https://github.com/Basis-Theory/ios-threeds/compare/1.1.0...1.2.0) (2026-05-01)
+
+
+### Features
+
+* update ravelin dependencies ([#5](https://github.com/Basis-Theory/ios-threeds/issues/5)) ([c479484](https://github.com/Basis-Theory/ios-threeds/commit/c4794843434337a186ee7e85c36ddb648edf3768))
+
+
 ## [1.1.0](https://github.com/Basis-Theory/ios-threeds/compare/1.0.0...1.1.0) (2025-05-06)
 
 
