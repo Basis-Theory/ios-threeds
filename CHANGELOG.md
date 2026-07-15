@@ -1,3 +1,11 @@
+### [1.2.1](https://github.com/Basis-Theory/ios-threeds/compare/1.2.0...1.2.1) (2026-07-15)
+
+
+### Bug Fixes
+
+* **ENG-11542:** use bt_semantic_release app token for release write-back ([#6](https://github.com/Basis-Theory/ios-threeds/issues/6)) ([103d453](https://github.com/Basis-Theory/ios-threeds/commit/103d453aaa3960e561ed41e79f5a349bb8c451c9))
+
+
 ## [1.2.0](https://github.com/Basis-Theory/ios-threeds/compare/1.1.0...1.2.0) (2026-05-01)
 
 
