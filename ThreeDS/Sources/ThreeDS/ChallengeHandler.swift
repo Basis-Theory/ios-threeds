@@ -8,7 +8,6 @@ import Ravelin3DS
 
 class ChallengeHandler: ChallengeStatusReceiver {
     let sessionId: String
-    let apiKey: String
     let authenticationResponse: AuthenticationResponse
     let transactionStatusMap = [
         "Y": "successful",
@@ -22,13 +21,11 @@ class ChallengeHandler: ChallengeStatusReceiver {
 
     init(
         sessionId: String,
-        apiKey: String,
         authenticationResponse: AuthenticationResponse,
         onCompleted: @escaping (ChallengeResponse) -> Void,
         onFailure: @escaping (ChallengeResponse) -> Void
     ) {
         self.sessionId = sessionId
-        self.apiKey = apiKey
         self.authenticationResponse = authenticationResponse
         self.onCompleted = onCompleted
         self.onFailure = onFailure
@@ -38,7 +35,7 @@ class ChallengeHandler: ChallengeStatusReceiver {
         if let transactionStatus = transactionStatusMap[completionEvent.getTransactionStatus()] {
             Logger.log("challenge completed with status: \(transactionStatus)")
             Telemetry.send(
-                event: "challenge.completed", sessionId: sessionId, apiKey: apiKey,
+                event: "challenge.completed", sessionId: sessionId,
                 attributes: ["authenticationStatus": transactionStatus])
             onCompleted(
                 ChallengeResponse(
@@ -54,7 +51,7 @@ class ChallengeHandler: ChallengeStatusReceiver {
 
     func cancelled() {
         Logger.log("challenge cancelled")
-        Telemetry.send(event: "challenge.abandoned", sessionId: sessionId, apiKey: apiKey)
+        Telemetry.send(event: "challenge.abandoned", sessionId: sessionId)
         onFailure(
             ChallengeResponse(
                 id: sessionId,
@@ -64,7 +61,7 @@ class ChallengeHandler: ChallengeStatusReceiver {
 
     func timedout() {
         Logger.log("challenge timed out")
-        Telemetry.send(event: "challenge.timed_out", sessionId: sessionId, apiKey: apiKey)
+        Telemetry.send(event: "challenge.timed_out", sessionId: sessionId)
         onFailure(
             ChallengeResponse(
                 id: sessionId,

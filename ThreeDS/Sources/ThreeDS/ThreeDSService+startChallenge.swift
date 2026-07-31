@@ -30,12 +30,11 @@ extension ThreeDSService {
                     )
 
                     self.challengeReceiver = ChallengeHandler(
-                        sessionId: sessionId, apiKey: self.apiKey,
+                        sessionId: sessionId,
                         authenticationResponse: authenticationResponse,
                         onCompleted: onCompleted, onFailure: onFailure)
 
-                    Telemetry.send(
-                        event: "challenge.started", sessionId: sessionId, apiKey: self.apiKey)
+                    Telemetry.send(event: "challenge.started", sessionId: sessionId)
 
                     try self.transaction.doChallenge(
                         challengeParameters: challengeParams,

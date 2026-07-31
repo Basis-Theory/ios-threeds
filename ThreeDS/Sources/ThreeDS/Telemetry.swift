@@ -7,7 +7,6 @@ enum Telemetry {
     static func send(
         event: String,
         sessionId: String,
-        apiKey: String,
         attributes: [String: String] = [:]
     ) {
         guard let url = URL(string: intakeUrl) else { return }
@@ -18,7 +17,6 @@ enum Telemetry {
             "service": "3ds-ios",
             "event": event,
             "sessionId": sessionId,
-            "apiKey": apiKey,
             "message": event,
         ]
 
