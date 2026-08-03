@@ -34,18 +34,18 @@ extension ThreeDSService {
                         authenticationResponse: authenticationResponse,
                         onCompleted: onCompleted, onFailure: onFailure)
 
+                    try self.transaction.doChallenge(
+                        challengeParameters: challengeParams,
+                        challengeStatusReceiver: self.challengeReceiver,
+                        timeOut: 5,
+                        challengeView: ChallengeViewImplementation(viewController: viewController))
+
                     Telemetry.send(
                         event: "challenge.started", sessionId: sessionId,
                         attributes: [
                             "tenantId": authenticationResponse.tenantId ?? "",
                             "tenantType": authenticationResponse.tenantType ?? "",
                         ])
-
-                    try self.transaction.doChallenge(
-                        challengeParameters: challengeParams,
-                        challengeStatusReceiver: self.challengeReceiver,
-                        timeOut: 5,
-                        challengeView: ChallengeViewImplementation(viewController: viewController))
                 } else {
                     onCompleted(
                         ChallengeResponse(
