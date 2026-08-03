@@ -26,6 +26,8 @@ struct AuthenticationResponse: Codable {
     let acsSignedContent: String?
     let messageExtensions: [String]?
     let acsRenderingType: AcsRenderingType?
+    let tenantId: String?
+    let tenantType: String?
 }
 
 struct AcsRenderingType: Codable {

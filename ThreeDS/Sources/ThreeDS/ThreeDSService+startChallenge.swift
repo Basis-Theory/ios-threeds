@@ -34,7 +34,12 @@ extension ThreeDSService {
                         authenticationResponse: authenticationResponse,
                         onCompleted: onCompleted, onFailure: onFailure)
 
-                    Telemetry.send(event: "challenge.started", sessionId: sessionId)
+                    Telemetry.send(
+                        event: "challenge.started", sessionId: sessionId,
+                        attributes: [
+                            "tenantId": authenticationResponse.tenantId ?? "",
+                            "tenantType": authenticationResponse.tenantType ?? "",
+                        ])
 
                     try self.transaction.doChallenge(
                         challengeParameters: challengeParams,

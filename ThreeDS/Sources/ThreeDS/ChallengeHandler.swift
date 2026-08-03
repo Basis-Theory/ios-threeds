@@ -36,7 +36,11 @@ class ChallengeHandler: ChallengeStatusReceiver {
             Logger.log("challenge completed with status: \(transactionStatus)")
             Telemetry.send(
                 event: "challenge.completed", sessionId: sessionId,
-                attributes: ["authenticationStatus": transactionStatus])
+                attributes: [
+                    "authenticationStatus": transactionStatus,
+                    "tenantId": authenticationResponse.tenantId ?? "",
+                    "tenantType": authenticationResponse.tenantType ?? "",
+                ])
             onCompleted(
                 ChallengeResponse(
                     id: sessionId,
@@ -51,7 +55,12 @@ class ChallengeHandler: ChallengeStatusReceiver {
 
     func cancelled() {
         Logger.log("challenge cancelled")
-        Telemetry.send(event: "challenge.abandoned", sessionId: sessionId)
+        Telemetry.send(
+            event: "challenge.abandoned", sessionId: sessionId,
+            attributes: [
+                "tenantId": authenticationResponse.tenantId ?? "",
+                "tenantType": authenticationResponse.tenantType ?? "",
+            ])
         onFailure(
             ChallengeResponse(
                 id: sessionId,
@@ -61,7 +70,12 @@ class ChallengeHandler: ChallengeStatusReceiver {
 
     func timedout() {
         Logger.log("challenge timed out")
-        Telemetry.send(event: "challenge.timed_out", sessionId: sessionId)
+        Telemetry.send(
+            event: "challenge.timed_out", sessionId: sessionId,
+            attributes: [
+                "tenantId": authenticationResponse.tenantId ?? "",
+                "tenantType": authenticationResponse.tenantType ?? "",
+            ])
         onFailure(
             ChallengeResponse(
                 id: sessionId,
