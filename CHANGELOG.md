@@ -1,3 +1,11 @@
+### [1.2.2](https://github.com/Basis-Theory/ios-threeds/compare/1.2.1...1.2.2) (2026-10-12)
+
+
+### Bug Fixes
+
+* **ENG-12657:** allow absent 3DS method URLs in session response ([#9](https://github.com/Basis-Theory/ios-threeds/issues/9)) ([c97c85a](https://github.com/Basis-Theory/ios-threeds/commit/c97c85a6912bdbeb7f2428c0abbbc6678269beac))
+
+
 ### [1.2.1](https://github.com/Basis-Theory/ios-threeds/compare/1.2.0...1.2.1) (2026-07-15)
 
 
